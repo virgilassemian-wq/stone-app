@@ -115,7 +115,7 @@
   "use strict";
 
   /* ---- Constantes du contrat PWA (identiques côté moteurs) ---- */
-  var FRAME_READY_TIMEOUT_MS = 90000;
+  var FRAME_READY_TIMEOUT_MS = 45000;
   var ENGINE_ORIGIN_RE = /^https:\/\/(?:[a-z0-9-]+-)?script\.googleusercontent\.com$/i;
   var STORAGE_KEY = "STONE_PWA_LAST_UNIVERSE::" + String(window.STONE_PWA_INSTANCE || "default");
 
@@ -189,8 +189,11 @@
       el.innerHTML =
         '<section><div class="mark" aria-hidden="true">' + u.glyph + "</div>" +
         "<h1>STONE " + u.label + " n’a pas pu s’ouvrir</h1>" +
-        "<p>Vérifiez votre connexion et votre session Google, puis réessayez.</p>" +
-        '<button class="primary-button" type="button" data-retry="' + u.key + '">Réessayer</button></section>';
+        "<p>Première visite ? Google demande une autorisation qui ne peut pas s’afficher ici : " +
+        "ouvrez " + u.label + " une fois dans le navigateur, acceptez, puis revenez réessayer.</p>" +
+        '<button class="primary-button" type="button" data-authorize="' + u.key + '">Autoriser dans le navigateur</button>' +
+        '<div style="height:10px"></div>' +
+        '<button class="quiet-button" type="button" data-retry="' + u.key + '">Réessayer ici</button></section>';
     } else if (kind === "disabled") {
       el.innerHTML =
         '<section><div class="mark" aria-hidden="true">' + u.glyph + "</div>" +
@@ -381,6 +384,18 @@
 
   stage.addEventListener("click", function (event) {
     if (event.target.closest && event.target.closest("[data-open-settings]")) { openSettings(); return; }
+    var authorize = event.target.closest && event.target.closest("[data-authorize]");
+    if (authorize) {
+      /* Consentement Google impossible en iframe : ouvrir le moteur en direct
+         (sans paramètres pwa), l'utilisateur accepte, puis réessaie ici. */
+      var au = universe(authorize.dataset.authorize);
+      if (au) {
+        var direct = new URL(effectiveUrl(au));
+        if (au.query) Object.keys(au.query).forEach(function (k) { direct.searchParams.set(k, au.query[k]); });
+        window.open(direct.toString(), "_blank", "noopener");
+      }
+      return;
+    }
     var retry = event.target.closest && event.target.closest("[data-retry]");
     if (!retry) return;
     if (retry.dataset.retry === "__reload__") { window.location.reload(); return; }
