@@ -10,7 +10,7 @@ window.STONE_PWA_UNIVERSES = [
     tagline: "Mon premier portefeuille",
     glyph: "◈",
     accent: "#c9a567",
-    url: "https://script.google.com/macros/s/AKfycbxamPHDSlpLdaOMpJ2soB1Wnnvjcd1lpj0oja5BdEgh/exec",
+    url: "https://script.google.com/macros/s/AKfycbwZ4LbcsS7jHv38XReH0l_l70JOKp6biJr1vskYDJBxvrFfdQ_kHGp_v61reoP-TToEJQ/exec",
     msgPrefix: "STONE_STARTER_PWA",
     enabled: true
   },
@@ -20,7 +20,7 @@ window.STONE_PWA_UNIVERSES = [
     tagline: "Du revenu au patrimoine",
     glyph: "◇",
     accent: "#e0c18a",
-    url: "https://script.google.com/macros/s/AKfycbxamPHDSlpLdaOMpJ2soB1Wnnvjcd1lpj0oja5BdEgh/exec",
+    url: "https://script.google.com/macros/s/AKfycbwZ4LbcsS7jHv38XReH0l_l70JOKp6biJr1vskYDJBxvrFfdQ_kHGp_v61reoP-TToEJQ/exec",
     query: { app: "money" },
     msgPrefix: "STONE_MONEY_PWA",
     enabled: true
