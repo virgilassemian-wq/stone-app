@@ -85,7 +85,7 @@
   </header>
 
   <section class="notice" id="updateNotice" role="status" aria-live="polite" hidden>
-    <span>Une nouvelle version de la coque STONE est disponible.</span>
+    <span>Une nouvelle version de STONE est disponible.</span>
     <button type="button" id="updateButton">Mettre à jour</button>
   </section>
   <section class="notice" id="appleNotice" role="dialog" aria-label="Installer sur iPhone ou iPad" hidden>
@@ -101,7 +101,7 @@
 <div class="sheet-backdrop" id="sheetBackdrop"></div>
 <section class="settings-sheet" id="settingsSheet" role="dialog" aria-label="Réglages des univers" aria-modal="true">
   <h2>Réglages des univers</h2>
-  <p class="sheet-sub">Les adresses des moteurs sont conservées uniquement sur cet appareil, jamais publiées. Laisser vide pour utiliser la valeur par défaut de cette coque.</p>
+  <p class="sheet-sub">Ces adresses restent uniquement sur cet appareil, jamais publiées. Laisse vide pour garder la valeur par défaut.</p>
   <div id="settingsFields"></div>
   <div class="settings-actions">
     <button type="button" class="settings-cancel" id="settingsCancel">Annuler</button>
@@ -182,7 +182,7 @@
         '<section><div class="mark" aria-hidden="true">' + u.glyph + "</div>" +
         '<p class="eyebrow">Connexion sécurisée</p>' +
         "<h1>Ouverture de STONE " + u.label + "</h1>" +
-        "<p>La coque est prête. L’univers " + u.label + " est chargé depuis son moteur STONE.</p>" +
+        "<p>Connexion à ton espace " + u.label + "…</p>" +
         '<div class="loading-line" aria-hidden="true"><span></span></div></section>';
     } else if (kind === "error") {
       el.setAttribute("role", "alert");
@@ -199,7 +199,7 @@
         '<section><div class="mark" aria-hidden="true">' + u.glyph + "</div>" +
         '<p class="eyebrow">Bientôt</p>' +
         "<h1>STONE " + u.label + "</h1>" +
-        "<p>Cet univers n’est pas encore raccordé à la coque STONE. Il reste accessible par son lien direct habituel.</p></section>";
+        "<p>Cet univers arrive bientôt dans STONE.</p></section>";
     } else if (kind === "configure") {
       el.innerHTML =
         '<section><div class="mark" aria-hidden="true">' + u.glyph + "</div>" +

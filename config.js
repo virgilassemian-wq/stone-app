@@ -1,7 +1,7 @@
 /* STONE PWA — registre des univers · COQUE BÊTA (amis).
-   Ne contient AUCUNE adresse personnelle : Invest et Money pointent sur le
-   Starter multi-utilisateur (données dans le Drive/navigateur de chaque
-   utilisateur), Ledge sur le déploiement bêta anonyme dédié (@18). */
+   Ne contient AUCUNE adresse personnelle : Invest pointe sur le Starter
+   multi-utilisateur, Money sur son canal authentifié privé et Ledge sur le
+   déploiement bêta anonyme dédié (@19). */
 window.STONE_PWA_INSTANCE = "beta";
 window.STONE_PWA_UNIVERSES = [
   {
@@ -20,8 +20,7 @@ window.STONE_PWA_UNIVERSES = [
     tagline: "Du revenu au patrimoine",
     glyph: "◇",
     accent: "#e0c18a",
-    url: "https://script.google.com/macros/s/AKfycbwZ4LbcsS7jHv38XReH0l_l70JOKp6biJr1vskYDJBxvrFfdQ_kHGp_v61reoP-TToEJQ/exec",
-    query: { app: "money" },
+    url: "https://script.google.com/macros/s/AKfycbxPNnyqKv1IiSclCvDSQKPYx2ZUEm4guXz-2FXXn_wYWskXN5VA-rCrJ66KkvvIlu34bg/exec",
     msgPrefix: "STONE_MONEY_PWA",
     enabled: true
   },
