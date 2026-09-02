@@ -1,7 +1,8 @@
 /* STONE PWA — registre des univers · COQUE BÊTA (amis).
    Ne contient AUCUNE adresse personnelle : Invest pointe sur le Starter
-   multi-utilisateur, Money sur son canal authentifié privé et Ledge sur le
-   déploiement bêta anonyme dédié (@19). */
+   multi-utilisateur, Money sur son canal multi-utilisateur (chaque personne
+   crée et possède son propre classeur) et Ledge sur le déploiement bêta
+   anonyme dédié (@19). */
 window.STONE_PWA_INSTANCE = "beta";
 window.STONE_PWA_UNIVERSES = [
   {
@@ -35,13 +36,13 @@ window.STONE_PWA_UNIVERSES = [
     enabled: true
   },
   {
-    key: "trade",
-    label: "Trade",
-    tagline: "Préparation des ordres",
-    glyph: "◧",
-    accent: "#5b8def",
-    url: "",
-    msgPrefix: "STONE_TRADE_PWA",
-    enabled: false
+    key: "estate",
+    label: "Estate",
+    tagline: "Immobilier et foncier",
+    glyph: "▱",
+    accent: "#c9a567",
+    url: "https://script.google.com/macros/s/AKfycbzKg44_NL6kzqDJByrnoTCnHLVnrvyv4ozO-qIt72rs8Muk2yS1a_lrRIT4IYq54ZNDiQ/exec",
+    msgPrefix: "STONE_ESTATE_PWA",
+    enabled: true
   }
 ];
